@@ -20,7 +20,6 @@ var (
 	_ = big.NewInt
 	_ = strings.NewReader
 	_ = ethereum.NotFound
-	_ = abi.U256
 	_ = bind.Bind
 	_ = common.Big1
 	_ = types.BloomLookup
@@ -138,7 +137,7 @@ func bindTokenBEP20(address common.Address, caller bind.ContractCaller, transact
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_TokenBEP20 *TokenBEP20Raw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+func (_TokenBEP20 *TokenBEP20Raw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
 	return _TokenBEP20.Contract.TokenBEP20Caller.contract.Call(opts, result, method, params...)
 }
 
@@ -157,7 +156,7 @@ func (_TokenBEP20 *TokenBEP20Raw) Transact(opts *bind.TransactOpts, method strin
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_TokenBEP20 *TokenBEP20CallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+func (_TokenBEP20 *TokenBEP20CallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
 	return _TokenBEP20.Contract.contract.Call(opts, result, method, params...)
 }
 
@@ -172,187 +171,187 @@ func (_TokenBEP20 *TokenBEP20TransactorRaw) Transact(opts *bind.TransactOpts, me
 	return _TokenBEP20.Contract.contract.Transact(opts, method, params...)
 }
 
-// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
+//// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
+////
+//// Solidity: function allowance(address _owner, address spender) constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Caller) Allowance(opts *bind.CallOpts, _owner common.Address, spender common.Address) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _TokenBEP20.contract.Call(opts, out, "allowance", _owner, spender)
+//	return *ret0, err
+//}
 //
-// Solidity: function allowance(address _owner, address spender) constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Caller) Allowance(opts *bind.CallOpts, _owner common.Address, spender common.Address) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _TokenBEP20.contract.Call(opts, out, "allowance", _owner, spender)
-	return *ret0, err
-}
-
-// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
+//// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
+////
+//// Solidity: function allowance(address _owner, address spender) constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Session) Allowance(_owner common.Address, spender common.Address) (*big.Int, error) {
+//	return _TokenBEP20.Contract.Allowance(&_TokenBEP20.CallOpts, _owner, spender)
+//}
 //
-// Solidity: function allowance(address _owner, address spender) constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Session) Allowance(_owner common.Address, spender common.Address) (*big.Int, error) {
-	return _TokenBEP20.Contract.Allowance(&_TokenBEP20.CallOpts, _owner, spender)
-}
-
-// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
+//// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
+////
+//// Solidity: function allowance(address _owner, address spender) constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20CallerSession) Allowance(_owner common.Address, spender common.Address) (*big.Int, error) {
+//	return _TokenBEP20.Contract.Allowance(&_TokenBEP20.CallOpts, _owner, spender)
+//}
 //
-// Solidity: function allowance(address _owner, address spender) constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20CallerSession) Allowance(_owner common.Address, spender common.Address) (*big.Int, error) {
-	return _TokenBEP20.Contract.Allowance(&_TokenBEP20.CallOpts, _owner, spender)
-}
-
-// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
+//// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
+////
+//// Solidity: function balanceOf(address account) constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Caller) BalanceOf(opts *bind.CallOpts, account common.Address) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _TokenBEP20.contract.Call(opts, out, "balanceOf", account)
+//	return *ret0, err
+//}
 //
-// Solidity: function balanceOf(address account) constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Caller) BalanceOf(opts *bind.CallOpts, account common.Address) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _TokenBEP20.contract.Call(opts, out, "balanceOf", account)
-	return *ret0, err
-}
-
-// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
+//// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
+////
+//// Solidity: function balanceOf(address account) constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Session) BalanceOf(account common.Address) (*big.Int, error) {
+//	return _TokenBEP20.Contract.BalanceOf(&_TokenBEP20.CallOpts, account)
+//}
 //
-// Solidity: function balanceOf(address account) constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Session) BalanceOf(account common.Address) (*big.Int, error) {
-	return _TokenBEP20.Contract.BalanceOf(&_TokenBEP20.CallOpts, account)
-}
-
-// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
+//// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
+////
+//// Solidity: function balanceOf(address account) constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20CallerSession) BalanceOf(account common.Address) (*big.Int, error) {
+//	return _TokenBEP20.Contract.BalanceOf(&_TokenBEP20.CallOpts, account)
+//}
 //
-// Solidity: function balanceOf(address account) constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20CallerSession) BalanceOf(account common.Address) (*big.Int, error) {
-	return _TokenBEP20.Contract.BalanceOf(&_TokenBEP20.CallOpts, account)
-}
-
-// Decimals is a free data retrieval call binding the contract method 0x313ce567.
+//// Decimals is a free data retrieval call binding the contract method 0x313ce567.
+////
+//// Solidity: function decimals() constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Caller) Decimals(opts *bind.CallOpts) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _TokenBEP20.contract.Call(opts, out, "decimals")
+//	return *ret0, err
+//}
 //
-// Solidity: function decimals() constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Caller) Decimals(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _TokenBEP20.contract.Call(opts, out, "decimals")
-	return *ret0, err
-}
-
-// Decimals is a free data retrieval call binding the contract method 0x313ce567.
+//// Decimals is a free data retrieval call binding the contract method 0x313ce567.
+////
+//// Solidity: function decimals() constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Session) Decimals() (*big.Int, error) {
+//	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function decimals() constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Session) Decimals() (*big.Int, error) {
-	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
-}
-
-// Decimals is a free data retrieval call binding the contract method 0x313ce567.
+//// Decimals is a free data retrieval call binding the contract method 0x313ce567.
+////
+//// Solidity: function decimals() constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20CallerSession) Decimals() (*big.Int, error) {
+//	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function decimals() constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20CallerSession) Decimals() (*big.Int, error) {
-	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
-}
-
-// GetOwner is a free data retrieval call binding the contract method 0x893d20e8.
+//// GetOwner is a free data retrieval call binding the contract method 0x893d20e8.
+////
+//// Solidity: function getOwner() constant returns(address)
+//func (_TokenBEP20 *TokenBEP20Caller) GetOwner(opts *bind.CallOpts) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _TokenBEP20.contract.Call(opts, out, "getOwner")
+//	return *ret0, err
+//}
 //
-// Solidity: function getOwner() constant returns(address)
-func (_TokenBEP20 *TokenBEP20Caller) GetOwner(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _TokenBEP20.contract.Call(opts, out, "getOwner")
-	return *ret0, err
-}
-
-// GetOwner is a free data retrieval call binding the contract method 0x893d20e8.
+//// GetOwner is a free data retrieval call binding the contract method 0x893d20e8.
+////
+//// Solidity: function getOwner() constant returns(address)
+//func (_TokenBEP20 *TokenBEP20Session) GetOwner() (common.Address, error) {
+//	return _TokenBEP20.Contract.GetOwner(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function getOwner() constant returns(address)
-func (_TokenBEP20 *TokenBEP20Session) GetOwner() (common.Address, error) {
-	return _TokenBEP20.Contract.GetOwner(&_TokenBEP20.CallOpts)
-}
-
-// GetOwner is a free data retrieval call binding the contract method 0x893d20e8.
+//// GetOwner is a free data retrieval call binding the contract method 0x893d20e8.
+////
+//// Solidity: function getOwner() constant returns(address)
+//func (_TokenBEP20 *TokenBEP20CallerSession) GetOwner() (common.Address, error) {
+//	return _TokenBEP20.Contract.GetOwner(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function getOwner() constant returns(address)
-func (_TokenBEP20 *TokenBEP20CallerSession) GetOwner() (common.Address, error) {
-	return _TokenBEP20.Contract.GetOwner(&_TokenBEP20.CallOpts)
-}
-
-// Name is a free data retrieval call binding the contract method 0x06fdde03.
+//// Name is a free data retrieval call binding the contract method 0x06fdde03.
+////
+//// Solidity: function name() constant returns(string)
+//func (_TokenBEP20 *TokenBEP20Caller) Name(opts *bind.CallOpts) (string, error) {
+//	var (
+//		ret0 = new(string)
+//	)
+//	out := ret0
+//	err := _TokenBEP20.contract.Call(opts, out, "name")
+//	return *ret0, err
+//}
 //
-// Solidity: function name() constant returns(string)
-func (_TokenBEP20 *TokenBEP20Caller) Name(opts *bind.CallOpts) (string, error) {
-	var (
-		ret0 = new(string)
-	)
-	out := ret0
-	err := _TokenBEP20.contract.Call(opts, out, "name")
-	return *ret0, err
-}
-
-// Name is a free data retrieval call binding the contract method 0x06fdde03.
+//// Name is a free data retrieval call binding the contract method 0x06fdde03.
+////
+//// Solidity: function name() constant returns(string)
+//func (_TokenBEP20 *TokenBEP20Session) Name() (string, error) {
+//	return _TokenBEP20.Contract.Name(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function name() constant returns(string)
-func (_TokenBEP20 *TokenBEP20Session) Name() (string, error) {
-	return _TokenBEP20.Contract.Name(&_TokenBEP20.CallOpts)
-}
-
-// Name is a free data retrieval call binding the contract method 0x06fdde03.
+//// Name is a free data retrieval call binding the contract method 0x06fdde03.
+////
+//// Solidity: function name() constant returns(string)
+//func (_TokenBEP20 *TokenBEP20CallerSession) Name() (string, error) {
+//	return _TokenBEP20.Contract.Name(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function name() constant returns(string)
-func (_TokenBEP20 *TokenBEP20CallerSession) Name() (string, error) {
-	return _TokenBEP20.Contract.Name(&_TokenBEP20.CallOpts)
-}
-
-// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
+//// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
+////
+//// Solidity: function symbol() constant returns(string)
+//func (_TokenBEP20 *TokenBEP20Caller) Symbol(opts *bind.CallOpts) (string, error) {
+//	var (
+//		ret0 = new(string)
+//	)
+//	out := ret0
+//	err := _TokenBEP20.contract.Call(opts, out, "symbol")
+//	return *ret0, err
+//}
 //
-// Solidity: function symbol() constant returns(string)
-func (_TokenBEP20 *TokenBEP20Caller) Symbol(opts *bind.CallOpts) (string, error) {
-	var (
-		ret0 = new(string)
-	)
-	out := ret0
-	err := _TokenBEP20.contract.Call(opts, out, "symbol")
-	return *ret0, err
-}
-
-// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
+//// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
+////
+//// Solidity: function symbol() constant returns(string)
+//func (_TokenBEP20 *TokenBEP20Session) Symbol() (string, error) {
+//	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function symbol() constant returns(string)
-func (_TokenBEP20 *TokenBEP20Session) Symbol() (string, error) {
-	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
-}
-
-// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
+//// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
+////
+//// Solidity: function symbol() constant returns(string)
+//func (_TokenBEP20 *TokenBEP20CallerSession) Symbol() (string, error) {
+//	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function symbol() constant returns(string)
-func (_TokenBEP20 *TokenBEP20CallerSession) Symbol() (string, error) {
-	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
-}
-
-// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
+//// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
+////
+//// Solidity: function totalSupply() constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Caller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _TokenBEP20.contract.Call(opts, out, "totalSupply")
+//	return *ret0, err
+//}
 //
-// Solidity: function totalSupply() constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Caller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _TokenBEP20.contract.Call(opts, out, "totalSupply")
-	return *ret0, err
-}
-
-// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
+//// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
+////
+//// Solidity: function totalSupply() constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20Session) TotalSupply() (*big.Int, error) {
+//	return _TokenBEP20.Contract.TotalSupply(&_TokenBEP20.CallOpts)
+//}
 //
-// Solidity: function totalSupply() constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20Session) TotalSupply() (*big.Int, error) {
-	return _TokenBEP20.Contract.TotalSupply(&_TokenBEP20.CallOpts)
-}
-
-// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
-//
-// Solidity: function totalSupply() constant returns(uint256)
-func (_TokenBEP20 *TokenBEP20CallerSession) TotalSupply() (*big.Int, error) {
-	return _TokenBEP20.Contract.TotalSupply(&_TokenBEP20.CallOpts)
-}
+//// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
+////
+//// Solidity: function totalSupply() constant returns(uint256)
+//func (_TokenBEP20 *TokenBEP20CallerSession) TotalSupply() (*big.Int, error) {
+//	return _TokenBEP20.Contract.TotalSupply(&_TokenBEP20.CallOpts)
+//}
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //

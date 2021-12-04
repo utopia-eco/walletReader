@@ -20,7 +20,6 @@ var (
 	_ = big.NewInt
 	_ = strings.NewReader
 	_ = ethereum.NotFound
-	_ = abi.U256
 	_ = bind.Bind
 	_ = common.Big1
 	_ = types.BloomLookup
@@ -176,12 +175,10 @@ func (_PancakeRouter *PancakeRouterTransactorRaw) Transact(opts *bind.TransactOp
 //
 // Solidity: function WETH() constant returns(address)
 func (_PancakeRouter *PancakeRouterCaller) WETH(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _PancakeRouter.contract.Call(opts, out, "WETH")
-	return *ret0, err
+	var out []interface{}
+	err := _PancakeRouter.contract.Call(opts, &out, "WETH")
+	ret0 := abi.ConvertType(out[0], new(*common.Address)).(**common.Address)
+	return **ret0, err
 }
 
 // WETH is a free data retrieval call binding the contract method 0xad5c4648.
@@ -202,12 +199,10 @@ func (_PancakeRouter *PancakeRouterCallerSession) WETH() (common.Address, error)
 //
 // Solidity: function factory() constant returns(address)
 func (_PancakeRouter *PancakeRouterCaller) Factory(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _PancakeRouter.contract.Call(opts, out, "factory")
-	return *ret0, err
+	var out []interface{}
+	err := _PancakeRouter.contract.Call(opts, &out, "factory")
+	ret0 := abi.ConvertType(out[0], new(*common.Address)).(**common.Address)
+	return **ret0, err
 }
 
 // Factory is a free data retrieval call binding the contract method 0xc45a0155.
@@ -228,11 +223,9 @@ func (_PancakeRouter *PancakeRouterCallerSession) Factory() (common.Address, err
 //
 // Solidity: function getAmountIn(uint256 amountOut, uint256 reserveIn, uint256 reserveOut) constant returns(uint256 amountIn)
 func (_PancakeRouter *PancakeRouterCaller) GetAmountIn(opts *bind.CallOpts, amountOut *big.Int, reserveIn *big.Int, reserveOut *big.Int) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _PancakeRouter.contract.Call(opts, out, "getAmountIn", amountOut, reserveIn, reserveOut)
+	var out []interface{}
+	err := _PancakeRouter.contract.Call(opts, &out, "getAmountIn", amountOut, reserveIn, reserveOut)
+	ret0 := abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
 	return *ret0, err
 }
 
@@ -254,12 +247,10 @@ func (_PancakeRouter *PancakeRouterCallerSession) GetAmountIn(amountOut *big.Int
 //
 // Solidity: function getAmountOut(uint256 amountIn, uint256 reserveIn, uint256 reserveOut) constant returns(uint256 amountOut)
 func (_PancakeRouter *PancakeRouterCaller) GetAmountOut(opts *bind.CallOpts, amountIn *big.Int, reserveIn *big.Int, reserveOut *big.Int) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _PancakeRouter.contract.Call(opts, out, "getAmountOut", amountIn, reserveIn, reserveOut)
-	return *ret0, err
+	var out []interface{}
+	err := _PancakeRouter.contract.Call(opts, &out, "getAmountOut", amountIn, reserveIn, reserveOut)
+	ret0 := abi.ConvertType(out[0], new(*big.Int)).(*big.Int)
+	return ret0, err
 }
 
 // GetAmountOut is a free data retrieval call binding the contract method 0x054d50d4.
@@ -280,12 +271,10 @@ func (_PancakeRouter *PancakeRouterCallerSession) GetAmountOut(amountIn *big.Int
 //
 // Solidity: function getAmountsIn(uint256 amountOut, address[] path) constant returns(uint256[] amounts)
 func (_PancakeRouter *PancakeRouterCaller) GetAmountsIn(opts *bind.CallOpts, amountOut *big.Int, path []common.Address) ([]*big.Int, error) {
-	var (
-		ret0 = new([]*big.Int)
-	)
-	out := ret0
-	err := _PancakeRouter.contract.Call(opts, out, "getAmountsIn", amountOut, path)
-	return *ret0, err
+	var out []interface{}
+	err := _PancakeRouter.contract.Call(opts, &out, "getAmountsIn", amountOut, path)
+	ret0 := abi.ConvertType(out[0], new([]*big.Int)).([]*big.Int)
+	return ret0, err
 }
 
 // GetAmountsIn is a free data retrieval call binding the contract method 0x1f00ca74.
@@ -306,12 +295,10 @@ func (_PancakeRouter *PancakeRouterCallerSession) GetAmountsIn(amountOut *big.In
 //
 // Solidity: function getAmountsOut(uint256 amountIn, address[] path) constant returns(uint256[] amounts)
 func (_PancakeRouter *PancakeRouterCaller) GetAmountsOut(opts *bind.CallOpts, amountIn *big.Int, path []common.Address) ([]*big.Int, error) {
-	var (
-		ret0 = new([]*big.Int)
-	)
-	out := ret0
-	err := _PancakeRouter.contract.Call(opts, out, "getAmountsOut", amountIn, path)
-	return *ret0, err
+	var out []interface{}
+	err := _PancakeRouter.contract.Call(opts, &out, "getAmountsOut", amountIn, path)
+	ret0 := abi.ConvertType(out[0], new([]*big.Int)).([]*big.Int)
+	return ret0, err
 }
 
 // GetAmountsOut is a free data retrieval call binding the contract method 0xd06ca61f.
@@ -332,12 +319,10 @@ func (_PancakeRouter *PancakeRouterCallerSession) GetAmountsOut(amountIn *big.In
 //
 // Solidity: function quote(uint256 amountA, uint256 reserveA, uint256 reserveB) constant returns(uint256 amountB)
 func (_PancakeRouter *PancakeRouterCaller) Quote(opts *bind.CallOpts, amountA *big.Int, reserveA *big.Int, reserveB *big.Int) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _PancakeRouter.contract.Call(opts, out, "quote", amountA, reserveA, reserveB)
-	return *ret0, err
+	var out []interface{}
+	err := _PancakeRouter.contract.Call(opts, &out, "quote", amountA, reserveA, reserveB)
+	ret0 := abi.ConvertType(out[0], new(*big.Int)).(*big.Int)
+	return ret0, err
 }
 
 // Quote is a free data retrieval call binding the contract method 0xad615dec.

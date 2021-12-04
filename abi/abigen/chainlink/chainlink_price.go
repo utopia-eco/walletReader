@@ -20,7 +20,6 @@ var (
 	_ = big.NewInt
 	_ = strings.NewReader
 	_ = ethereum.NotFound
-	_ = abi.U256
 	_ = bind.Bind
 	_ = common.Big1
 	_ = types.BloomLookup
@@ -172,68 +171,66 @@ func (_ChainlinkPrice *ChainlinkPriceTransactorRaw) Transact(opts *bind.Transact
 	return _ChainlinkPrice.Contract.contract.Transact(opts, method, params...)
 }
 
-// AccessController is a free data retrieval call binding the contract method 0xbc43cbaf.
+//// AccessController is a free data retrieval call binding the contract method 0xbc43cbaf.
+////
+//// Solidity: function accessController() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) AccessController(opts *bind.CallOpts) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "accessController")
+//	return *ret0, err
+//}
 //
-// Solidity: function accessController() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCaller) AccessController(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "accessController")
-	return *ret0, err
-}
-
-// AccessController is a free data retrieval call binding the contract method 0xbc43cbaf.
+//// AccessController is a free data retrieval call binding the contract method 0xbc43cbaf.
+////
+//// Solidity: function accessController() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceSession) AccessController() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.AccessController(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function accessController() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceSession) AccessController() (common.Address, error) {
-	return _ChainlinkPrice.Contract.AccessController(&_ChainlinkPrice.CallOpts)
-}
-
-// AccessController is a free data retrieval call binding the contract method 0xbc43cbaf.
+//// AccessController is a free data retrieval call binding the contract method 0xbc43cbaf.
+////
+//// Solidity: function accessController() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) AccessController() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.AccessController(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function accessController() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) AccessController() (common.Address, error) {
-	return _ChainlinkPrice.Contract.AccessController(&_ChainlinkPrice.CallOpts)
-}
-
-// Aggregator is a free data retrieval call binding the contract method 0x245a7bfc.
+//// Aggregator is a free data retrieval call binding the contract method 0x245a7bfc.
+////
+//// Solidity: function aggregator() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) Aggregator(opts *bind.CallOpts) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "aggregator")
+//	return *ret0, err
+//}
 //
-// Solidity: function aggregator() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCaller) Aggregator(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "aggregator")
-	return *ret0, err
-}
-
-// Aggregator is a free data retrieval call binding the contract method 0x245a7bfc.
+//// Aggregator is a free data retrieval call binding the contract method 0x245a7bfc.
+////
+//// Solidity: function aggregator() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceSession) Aggregator() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.Aggregator(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function aggregator() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceSession) Aggregator() (common.Address, error) {
-	return _ChainlinkPrice.Contract.Aggregator(&_ChainlinkPrice.CallOpts)
-}
-
-// Aggregator is a free data retrieval call binding the contract method 0x245a7bfc.
-//
-// Solidity: function aggregator() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) Aggregator() (common.Address, error) {
-	return _ChainlinkPrice.Contract.Aggregator(&_ChainlinkPrice.CallOpts)
-}
+//// Aggregator is a free data retrieval call binding the contract method 0x245a7bfc.
+////
+//// Solidity: function aggregator() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) Aggregator() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.Aggregator(&_ChainlinkPrice.CallOpts)
+//}
 
 // Decimals is a free data retrieval call binding the contract method 0x313ce567.
 //
 // Solidity: function decimals() constant returns(uint8)
 func (_ChainlinkPrice *ChainlinkPriceCaller) Decimals(opts *bind.CallOpts) (uint8, error) {
-	var (
-		ret0 = new(uint8)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "decimals")
-	return *ret0, err
+	var out []interface{}
+	err := _ChainlinkPrice.contract.Call(opts, &out, "decimals")
+	ret0 := abi.ConvertType(out[0], new(uint8)).(uint8)
+	return ret0, err
 }
 
 // Decimals is a free data retrieval call binding the contract method 0x313ce567.
@@ -250,141 +247,139 @@ func (_ChainlinkPrice *ChainlinkPriceCallerSession) Decimals() (uint8, error) {
 	return _ChainlinkPrice.Contract.Decimals(&_ChainlinkPrice.CallOpts)
 }
 
-// Description is a free data retrieval call binding the contract method 0x7284e416.
+//// Description is a free data retrieval call binding the contract method 0x7284e416.
+////
+//// Solidity: function description() constant returns(string)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) Description(opts *bind.CallOpts) (string, error) {
+//	var (
+//		ret0 = new(string)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "description")
+//	return *ret0, err
+//}
 //
-// Solidity: function description() constant returns(string)
-func (_ChainlinkPrice *ChainlinkPriceCaller) Description(opts *bind.CallOpts) (string, error) {
-	var (
-		ret0 = new(string)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "description")
-	return *ret0, err
-}
+//// Description is a free data retrieval call binding the contract method 0x7284e416.
+////
+//// Solidity: function description() constant returns(string)
+//func (_ChainlinkPrice *ChainlinkPriceSession) Description() (string, error) {
+//	return _ChainlinkPrice.Contract.Description(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// Description is a free data retrieval call binding the contract method 0x7284e416.
+////
+//// Solidity: function description() constant returns(string)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) Description() (string, error) {
+//	return _ChainlinkPrice.Contract.Description(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// GetAnswer is a free data retrieval call binding the contract method 0xb5ab58dc.
+////
+//// Solidity: function getAnswer(uint256 _roundId) constant returns(int256)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) GetAnswer(opts *bind.CallOpts, _roundId *big.Int) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "getAnswer", _roundId)
+//	return *ret0, err
+//}
+//
+//// GetAnswer is a free data retrieval call binding the contract method 0xb5ab58dc.
+////
+//// Solidity: function getAnswer(uint256 _roundId) constant returns(int256)
+//func (_ChainlinkPrice *ChainlinkPriceSession) GetAnswer(_roundId *big.Int) (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.GetAnswer(&_ChainlinkPrice.CallOpts, _roundId)
+//}
+//
+//// GetAnswer is a free data retrieval call binding the contract method 0xb5ab58dc.
+////
+//// Solidity: function getAnswer(uint256 _roundId) constant returns(int256)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) GetAnswer(_roundId *big.Int) (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.GetAnswer(&_ChainlinkPrice.CallOpts, _roundId)
+//}
 
-// Description is a free data retrieval call binding the contract method 0x7284e416.
+//// GetRoundData is a free data retrieval call binding the contract method 0x9a6fc8f5.
+////
+//// Solidity: function getRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) GetRoundData(opts *bind.CallOpts, _roundId *big.Int) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	ret := new(struct {
+//		RoundId         *big.Int
+//		Answer          *big.Int
+//		StartedAt       *big.Int
+//		UpdatedAt       *big.Int
+//		AnsweredInRound *big.Int
+//	})
+//	out := ret
+//	err := _ChainlinkPrice.contract.Call(opts, out, "getRoundData", _roundId)
+//	return *ret, err
+//}
 //
-// Solidity: function description() constant returns(string)
-func (_ChainlinkPrice *ChainlinkPriceSession) Description() (string, error) {
-	return _ChainlinkPrice.Contract.Description(&_ChainlinkPrice.CallOpts)
-}
-
-// Description is a free data retrieval call binding the contract method 0x7284e416.
+//// GetRoundData is a free data retrieval call binding the contract method 0x9a6fc8f5.
+////
+//// Solidity: function getRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceSession) GetRoundData(_roundId *big.Int) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.GetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
+//}
 //
-// Solidity: function description() constant returns(string)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) Description() (string, error) {
-	return _ChainlinkPrice.Contract.Description(&_ChainlinkPrice.CallOpts)
-}
-
-// GetAnswer is a free data retrieval call binding the contract method 0xb5ab58dc.
+//// GetRoundData is a free data retrieval call binding the contract method 0x9a6fc8f5.
+////
+//// Solidity: function getRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) GetRoundData(_roundId *big.Int) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.GetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
+//}
 //
-// Solidity: function getAnswer(uint256 _roundId) constant returns(int256)
-func (_ChainlinkPrice *ChainlinkPriceCaller) GetAnswer(opts *bind.CallOpts, _roundId *big.Int) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "getAnswer", _roundId)
-	return *ret0, err
-}
-
-// GetAnswer is a free data retrieval call binding the contract method 0xb5ab58dc.
+//// GetTimestamp is a free data retrieval call binding the contract method 0xb633620c.
+////
+//// Solidity: function getTimestamp(uint256 _roundId) constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) GetTimestamp(opts *bind.CallOpts, _roundId *big.Int) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "getTimestamp", _roundId)
+//	return *ret0, err
+//}
 //
-// Solidity: function getAnswer(uint256 _roundId) constant returns(int256)
-func (_ChainlinkPrice *ChainlinkPriceSession) GetAnswer(_roundId *big.Int) (*big.Int, error) {
-	return _ChainlinkPrice.Contract.GetAnswer(&_ChainlinkPrice.CallOpts, _roundId)
-}
-
-// GetAnswer is a free data retrieval call binding the contract method 0xb5ab58dc.
+//// GetTimestamp is a free data retrieval call binding the contract method 0xb633620c.
+////
+//// Solidity: function getTimestamp(uint256 _roundId) constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceSession) GetTimestamp(_roundId *big.Int) (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.GetTimestamp(&_ChainlinkPrice.CallOpts, _roundId)
+//}
 //
-// Solidity: function getAnswer(uint256 _roundId) constant returns(int256)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) GetAnswer(_roundId *big.Int) (*big.Int, error) {
-	return _ChainlinkPrice.Contract.GetAnswer(&_ChainlinkPrice.CallOpts, _roundId)
-}
-
-// GetRoundData is a free data retrieval call binding the contract method 0x9a6fc8f5.
-//
-// Solidity: function getRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCaller) GetRoundData(opts *bind.CallOpts, _roundId *big.Int) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	ret := new(struct {
-		RoundId         *big.Int
-		Answer          *big.Int
-		StartedAt       *big.Int
-		UpdatedAt       *big.Int
-		AnsweredInRound *big.Int
-	})
-	out := ret
-	err := _ChainlinkPrice.contract.Call(opts, out, "getRoundData", _roundId)
-	return *ret, err
-}
-
-// GetRoundData is a free data retrieval call binding the contract method 0x9a6fc8f5.
-//
-// Solidity: function getRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceSession) GetRoundData(_roundId *big.Int) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.GetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
-}
-
-// GetRoundData is a free data retrieval call binding the contract method 0x9a6fc8f5.
-//
-// Solidity: function getRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) GetRoundData(_roundId *big.Int) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.GetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
-}
-
-// GetTimestamp is a free data retrieval call binding the contract method 0xb633620c.
-//
-// Solidity: function getTimestamp(uint256 _roundId) constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCaller) GetTimestamp(opts *bind.CallOpts, _roundId *big.Int) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "getTimestamp", _roundId)
-	return *ret0, err
-}
-
-// GetTimestamp is a free data retrieval call binding the contract method 0xb633620c.
-//
-// Solidity: function getTimestamp(uint256 _roundId) constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceSession) GetTimestamp(_roundId *big.Int) (*big.Int, error) {
-	return _ChainlinkPrice.Contract.GetTimestamp(&_ChainlinkPrice.CallOpts, _roundId)
-}
-
-// GetTimestamp is a free data retrieval call binding the contract method 0xb633620c.
-//
-// Solidity: function getTimestamp(uint256 _roundId) constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) GetTimestamp(_roundId *big.Int) (*big.Int, error) {
-	return _ChainlinkPrice.Contract.GetTimestamp(&_ChainlinkPrice.CallOpts, _roundId)
-}
+//// GetTimestamp is a free data retrieval call binding the contract method 0xb633620c.
+////
+//// Solidity: function getTimestamp(uint256 _roundId) constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) GetTimestamp(_roundId *big.Int) (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.GetTimestamp(&_ChainlinkPrice.CallOpts, _roundId)
+//}
 
 // LatestAnswer is a free data retrieval call binding the contract method 0x50d25bcd.
 //
 // Solidity: function latestAnswer() constant returns(int256)
 func (_ChainlinkPrice *ChainlinkPriceCaller) LatestAnswer(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "latestAnswer")
+	var out []interface{}
+	err := _ChainlinkPrice.contract.Call(opts, &out, "latestAnswer")
+	ret0 := abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
 	return *ret0, err
 }
 
@@ -402,331 +397,331 @@ func (_ChainlinkPrice *ChainlinkPriceCallerSession) LatestAnswer() (*big.Int, er
 	return _ChainlinkPrice.Contract.LatestAnswer(&_ChainlinkPrice.CallOpts)
 }
 
-// LatestRound is a free data retrieval call binding the contract method 0x668a0f02.
+//// LatestRound is a free data retrieval call binding the contract method 0x668a0f02.
+////
+//// Solidity: function latestRound() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) LatestRound(opts *bind.CallOpts) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "latestRound")
+//	return *ret0, err
+//}
 //
-// Solidity: function latestRound() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCaller) LatestRound(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "latestRound")
-	return *ret0, err
-}
+//// LatestRound is a free data retrieval call binding the contract method 0x668a0f02.
+////
+//// Solidity: function latestRound() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceSession) LatestRound() (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.LatestRound(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// LatestRound is a free data retrieval call binding the contract method 0x668a0f02.
+////
+//// Solidity: function latestRound() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) LatestRound() (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.LatestRound(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// LatestRoundData is a free data retrieval call binding the contract method 0xfeaf968c.
+////
+//// Solidity: function latestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) LatestRoundData(opts *bind.CallOpts) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	ret := new(struct {
+//		RoundId         *big.Int
+//		Answer          *big.Int
+//		StartedAt       *big.Int
+//		UpdatedAt       *big.Int
+//		AnsweredInRound *big.Int
+//	})
+//	out := ret
+//	err := _ChainlinkPrice.contract.Call(opts, out, "latestRoundData")
+//	return *ret, err
+//}
+//
+//// LatestRoundData is a free data retrieval call binding the contract method 0xfeaf968c.
+////
+//// Solidity: function latestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceSession) LatestRoundData() (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.LatestRoundData(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// LatestRoundData is a free data retrieval call binding the contract method 0xfeaf968c.
+////
+//// Solidity: function latestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) LatestRoundData() (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.LatestRoundData(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// LatestTimestamp is a free data retrieval call binding the contract method 0x8205bf6a.
+////
+//// Solidity: function latestTimestamp() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) LatestTimestamp(opts *bind.CallOpts) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "latestTimestamp")
+//	return *ret0, err
+//}
+//
+//// LatestTimestamp is a free data retrieval call binding the contract method 0x8205bf6a.
+////
+//// Solidity: function latestTimestamp() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceSession) LatestTimestamp() (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.LatestTimestamp(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// LatestTimestamp is a free data retrieval call binding the contract method 0x8205bf6a.
+////
+//// Solidity: function latestTimestamp() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) LatestTimestamp() (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.LatestTimestamp(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+////
+//// Solidity: function owner() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "owner")
+//	return *ret0, err
+//}
+//
+//// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+////
+//// Solidity: function owner() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceSession) Owner() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.Owner(&_ChainlinkPrice.CallOpts)
+//}
+//
+//// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+////
+//// Solidity: function owner() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) Owner() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.Owner(&_ChainlinkPrice.CallOpts)
+//}
 
-// LatestRound is a free data retrieval call binding the contract method 0x668a0f02.
+//// PhaseAggregators is a free data retrieval call binding the contract method 0xc1597304.
+////
+//// Solidity: function phaseAggregators(uint16 ) constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) PhaseAggregators(opts *bind.CallOpts, arg0 uint16) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "phaseAggregators", arg0)
+//	return *ret0, err
+//}
 //
-// Solidity: function latestRound() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceSession) LatestRound() (*big.Int, error) {
-	return _ChainlinkPrice.Contract.LatestRound(&_ChainlinkPrice.CallOpts)
-}
-
-// LatestRound is a free data retrieval call binding the contract method 0x668a0f02.
+//// PhaseAggregators is a free data retrieval call binding the contract method 0xc1597304.
+////
+//// Solidity: function phaseAggregators(uint16 ) constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceSession) PhaseAggregators(arg0 uint16) (common.Address, error) {
+//	return _ChainlinkPrice.Contract.PhaseAggregators(&_ChainlinkPrice.CallOpts, arg0)
+//}
 //
-// Solidity: function latestRound() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) LatestRound() (*big.Int, error) {
-	return _ChainlinkPrice.Contract.LatestRound(&_ChainlinkPrice.CallOpts)
-}
-
-// LatestRoundData is a free data retrieval call binding the contract method 0xfeaf968c.
+//// PhaseAggregators is a free data retrieval call binding the contract method 0xc1597304.
+////
+//// Solidity: function phaseAggregators(uint16 ) constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) PhaseAggregators(arg0 uint16) (common.Address, error) {
+//	return _ChainlinkPrice.Contract.PhaseAggregators(&_ChainlinkPrice.CallOpts, arg0)
+//}
 //
-// Solidity: function latestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCaller) LatestRoundData(opts *bind.CallOpts) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	ret := new(struct {
-		RoundId         *big.Int
-		Answer          *big.Int
-		StartedAt       *big.Int
-		UpdatedAt       *big.Int
-		AnsweredInRound *big.Int
-	})
-	out := ret
-	err := _ChainlinkPrice.contract.Call(opts, out, "latestRoundData")
-	return *ret, err
-}
-
-// LatestRoundData is a free data retrieval call binding the contract method 0xfeaf968c.
+//// PhaseId is a free data retrieval call binding the contract method 0x58303b10.
+////
+//// Solidity: function phaseId() constant returns(uint16)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) PhaseId(opts *bind.CallOpts) (uint16, error) {
+//	var (
+//		ret0 = new(uint16)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "phaseId")
+//	return *ret0, err
+//}
 //
-// Solidity: function latestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceSession) LatestRoundData() (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.LatestRoundData(&_ChainlinkPrice.CallOpts)
-}
-
-// LatestRoundData is a free data retrieval call binding the contract method 0xfeaf968c.
+//// PhaseId is a free data retrieval call binding the contract method 0x58303b10.
+////
+//// Solidity: function phaseId() constant returns(uint16)
+//func (_ChainlinkPrice *ChainlinkPriceSession) PhaseId() (uint16, error) {
+//	return _ChainlinkPrice.Contract.PhaseId(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function latestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) LatestRoundData() (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.LatestRoundData(&_ChainlinkPrice.CallOpts)
-}
-
-// LatestTimestamp is a free data retrieval call binding the contract method 0x8205bf6a.
+//// PhaseId is a free data retrieval call binding the contract method 0x58303b10.
+////
+//// Solidity: function phaseId() constant returns(uint16)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) PhaseId() (uint16, error) {
+//	return _ChainlinkPrice.Contract.PhaseId(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function latestTimestamp() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCaller) LatestTimestamp(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "latestTimestamp")
-	return *ret0, err
-}
-
-// LatestTimestamp is a free data retrieval call binding the contract method 0x8205bf6a.
+//// ProposedAggregator is a free data retrieval call binding the contract method 0xe8c4be30.
+////
+//// Solidity: function proposedAggregator() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) ProposedAggregator(opts *bind.CallOpts) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "proposedAggregator")
+//	return *ret0, err
+//}
 //
-// Solidity: function latestTimestamp() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceSession) LatestTimestamp() (*big.Int, error) {
-	return _ChainlinkPrice.Contract.LatestTimestamp(&_ChainlinkPrice.CallOpts)
-}
-
-// LatestTimestamp is a free data retrieval call binding the contract method 0x8205bf6a.
+//// ProposedAggregator is a free data retrieval call binding the contract method 0xe8c4be30.
+////
+//// Solidity: function proposedAggregator() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceSession) ProposedAggregator() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.ProposedAggregator(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function latestTimestamp() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) LatestTimestamp() (*big.Int, error) {
-	return _ChainlinkPrice.Contract.LatestTimestamp(&_ChainlinkPrice.CallOpts)
-}
-
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+//// ProposedAggregator is a free data retrieval call binding the contract method 0xe8c4be30.
+////
+//// Solidity: function proposedAggregator() constant returns(address)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) ProposedAggregator() (common.Address, error) {
+//	return _ChainlinkPrice.Contract.ProposedAggregator(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function owner() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "owner")
-	return *ret0, err
-}
-
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+//// ProposedGetRoundData is a free data retrieval call binding the contract method 0x6001ac53.
+////
+//// Solidity: function proposedGetRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) ProposedGetRoundData(opts *bind.CallOpts, _roundId *big.Int) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	ret := new(struct {
+//		RoundId         *big.Int
+//		Answer          *big.Int
+//		StartedAt       *big.Int
+//		UpdatedAt       *big.Int
+//		AnsweredInRound *big.Int
+//	})
+//	out := ret
+//	err := _ChainlinkPrice.contract.Call(opts, out, "proposedGetRoundData", _roundId)
+//	return *ret, err
+//}
 //
-// Solidity: function owner() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceSession) Owner() (common.Address, error) {
-	return _ChainlinkPrice.Contract.Owner(&_ChainlinkPrice.CallOpts)
-}
-
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
+//// ProposedGetRoundData is a free data retrieval call binding the contract method 0x6001ac53.
+////
+//// Solidity: function proposedGetRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceSession) ProposedGetRoundData(_roundId *big.Int) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.ProposedGetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
+//}
 //
-// Solidity: function owner() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) Owner() (common.Address, error) {
-	return _ChainlinkPrice.Contract.Owner(&_ChainlinkPrice.CallOpts)
-}
-
-// PhaseAggregators is a free data retrieval call binding the contract method 0xc1597304.
+//// ProposedGetRoundData is a free data retrieval call binding the contract method 0x6001ac53.
+////
+//// Solidity: function proposedGetRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) ProposedGetRoundData(_roundId *big.Int) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.ProposedGetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
+//}
 //
-// Solidity: function phaseAggregators(uint16 ) constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCaller) PhaseAggregators(opts *bind.CallOpts, arg0 uint16) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "phaseAggregators", arg0)
-	return *ret0, err
-}
-
-// PhaseAggregators is a free data retrieval call binding the contract method 0xc1597304.
+//// ProposedLatestRoundData is a free data retrieval call binding the contract method 0x8f6b4d91.
+////
+//// Solidity: function proposedLatestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) ProposedLatestRoundData(opts *bind.CallOpts) (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	ret := new(struct {
+//		RoundId         *big.Int
+//		Answer          *big.Int
+//		StartedAt       *big.Int
+//		UpdatedAt       *big.Int
+//		AnsweredInRound *big.Int
+//	})
+//	out := ret
+//	err := _ChainlinkPrice.contract.Call(opts, out, "proposedLatestRoundData")
+//	return *ret, err
+//}
 //
-// Solidity: function phaseAggregators(uint16 ) constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceSession) PhaseAggregators(arg0 uint16) (common.Address, error) {
-	return _ChainlinkPrice.Contract.PhaseAggregators(&_ChainlinkPrice.CallOpts, arg0)
-}
-
-// PhaseAggregators is a free data retrieval call binding the contract method 0xc1597304.
+//// ProposedLatestRoundData is a free data retrieval call binding the contract method 0x8f6b4d91.
+////
+//// Solidity: function proposedLatestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceSession) ProposedLatestRoundData() (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.ProposedLatestRoundData(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function phaseAggregators(uint16 ) constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) PhaseAggregators(arg0 uint16) (common.Address, error) {
-	return _ChainlinkPrice.Contract.PhaseAggregators(&_ChainlinkPrice.CallOpts, arg0)
-}
-
-// PhaseId is a free data retrieval call binding the contract method 0x58303b10.
+//// ProposedLatestRoundData is a free data retrieval call binding the contract method 0x8f6b4d91.
+////
+//// Solidity: function proposedLatestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) ProposedLatestRoundData() (struct {
+//	RoundId         *big.Int
+//	Answer          *big.Int
+//	StartedAt       *big.Int
+//	UpdatedAt       *big.Int
+//	AnsweredInRound *big.Int
+//}, error) {
+//	return _ChainlinkPrice.Contract.ProposedLatestRoundData(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function phaseId() constant returns(uint16)
-func (_ChainlinkPrice *ChainlinkPriceCaller) PhaseId(opts *bind.CallOpts) (uint16, error) {
-	var (
-		ret0 = new(uint16)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "phaseId")
-	return *ret0, err
-}
-
-// PhaseId is a free data retrieval call binding the contract method 0x58303b10.
+//// Version is a free data retrieval call binding the contract method 0x54fd4d50.
+////
+//// Solidity: function version() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCaller) Version(opts *bind.CallOpts) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _ChainlinkPrice.contract.Call(opts, out, "version")
+//	return *ret0, err
+//}
 //
-// Solidity: function phaseId() constant returns(uint16)
-func (_ChainlinkPrice *ChainlinkPriceSession) PhaseId() (uint16, error) {
-	return _ChainlinkPrice.Contract.PhaseId(&_ChainlinkPrice.CallOpts)
-}
-
-// PhaseId is a free data retrieval call binding the contract method 0x58303b10.
+//// Version is a free data retrieval call binding the contract method 0x54fd4d50.
+////
+//// Solidity: function version() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceSession) Version() (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.Version(&_ChainlinkPrice.CallOpts)
+//}
 //
-// Solidity: function phaseId() constant returns(uint16)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) PhaseId() (uint16, error) {
-	return _ChainlinkPrice.Contract.PhaseId(&_ChainlinkPrice.CallOpts)
-}
-
-// ProposedAggregator is a free data retrieval call binding the contract method 0xe8c4be30.
-//
-// Solidity: function proposedAggregator() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCaller) ProposedAggregator(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "proposedAggregator")
-	return *ret0, err
-}
-
-// ProposedAggregator is a free data retrieval call binding the contract method 0xe8c4be30.
-//
-// Solidity: function proposedAggregator() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceSession) ProposedAggregator() (common.Address, error) {
-	return _ChainlinkPrice.Contract.ProposedAggregator(&_ChainlinkPrice.CallOpts)
-}
-
-// ProposedAggregator is a free data retrieval call binding the contract method 0xe8c4be30.
-//
-// Solidity: function proposedAggregator() constant returns(address)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) ProposedAggregator() (common.Address, error) {
-	return _ChainlinkPrice.Contract.ProposedAggregator(&_ChainlinkPrice.CallOpts)
-}
-
-// ProposedGetRoundData is a free data retrieval call binding the contract method 0x6001ac53.
-//
-// Solidity: function proposedGetRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCaller) ProposedGetRoundData(opts *bind.CallOpts, _roundId *big.Int) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	ret := new(struct {
-		RoundId         *big.Int
-		Answer          *big.Int
-		StartedAt       *big.Int
-		UpdatedAt       *big.Int
-		AnsweredInRound *big.Int
-	})
-	out := ret
-	err := _ChainlinkPrice.contract.Call(opts, out, "proposedGetRoundData", _roundId)
-	return *ret, err
-}
-
-// ProposedGetRoundData is a free data retrieval call binding the contract method 0x6001ac53.
-//
-// Solidity: function proposedGetRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceSession) ProposedGetRoundData(_roundId *big.Int) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.ProposedGetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
-}
-
-// ProposedGetRoundData is a free data retrieval call binding the contract method 0x6001ac53.
-//
-// Solidity: function proposedGetRoundData(uint80 _roundId) constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) ProposedGetRoundData(_roundId *big.Int) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.ProposedGetRoundData(&_ChainlinkPrice.CallOpts, _roundId)
-}
-
-// ProposedLatestRoundData is a free data retrieval call binding the contract method 0x8f6b4d91.
-//
-// Solidity: function proposedLatestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCaller) ProposedLatestRoundData(opts *bind.CallOpts) (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	ret := new(struct {
-		RoundId         *big.Int
-		Answer          *big.Int
-		StartedAt       *big.Int
-		UpdatedAt       *big.Int
-		AnsweredInRound *big.Int
-	})
-	out := ret
-	err := _ChainlinkPrice.contract.Call(opts, out, "proposedLatestRoundData")
-	return *ret, err
-}
-
-// ProposedLatestRoundData is a free data retrieval call binding the contract method 0x8f6b4d91.
-//
-// Solidity: function proposedLatestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceSession) ProposedLatestRoundData() (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.ProposedLatestRoundData(&_ChainlinkPrice.CallOpts)
-}
-
-// ProposedLatestRoundData is a free data retrieval call binding the contract method 0x8f6b4d91.
-//
-// Solidity: function proposedLatestRoundData() constant returns(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) ProposedLatestRoundData() (struct {
-	RoundId         *big.Int
-	Answer          *big.Int
-	StartedAt       *big.Int
-	UpdatedAt       *big.Int
-	AnsweredInRound *big.Int
-}, error) {
-	return _ChainlinkPrice.Contract.ProposedLatestRoundData(&_ChainlinkPrice.CallOpts)
-}
-
-// Version is a free data retrieval call binding the contract method 0x54fd4d50.
-//
-// Solidity: function version() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCaller) Version(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _ChainlinkPrice.contract.Call(opts, out, "version")
-	return *ret0, err
-}
-
-// Version is a free data retrieval call binding the contract method 0x54fd4d50.
-//
-// Solidity: function version() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceSession) Version() (*big.Int, error) {
-	return _ChainlinkPrice.Contract.Version(&_ChainlinkPrice.CallOpts)
-}
-
-// Version is a free data retrieval call binding the contract method 0x54fd4d50.
-//
-// Solidity: function version() constant returns(uint256)
-func (_ChainlinkPrice *ChainlinkPriceCallerSession) Version() (*big.Int, error) {
-	return _ChainlinkPrice.Contract.Version(&_ChainlinkPrice.CallOpts)
-}
+//// Version is a free data retrieval call binding the contract method 0x54fd4d50.
+////
+//// Solidity: function version() constant returns(uint256)
+//func (_ChainlinkPrice *ChainlinkPriceCallerSession) Version() (*big.Int, error) {
+//	return _ChainlinkPrice.Contract.Version(&_ChainlinkPrice.CallOpts)
+//}
 
 // AcceptOwnership is a paid mutator transaction binding the contract method 0x79ba5097.
 //

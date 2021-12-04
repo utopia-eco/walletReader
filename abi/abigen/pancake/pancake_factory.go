@@ -171,146 +171,144 @@ func (_PancakeFactory *PancakeFactoryTransactorRaw) Transact(opts *bind.Transact
 	return _PancakeFactory.Contract.contract.Transact(opts, method, params...)
 }
 
-// INITCODEPAIRHASH is a free data retrieval call binding the contract method 0x5855a25a.
+//// INITCODEPAIRHASH is a free data retrieval call binding the contract method 0x5855a25a.
+////
+//// Solidity: function INIT_CODE_PAIR_HASH() constant returns(bytes32)
+//func (_PancakeFactory *PancakeFactoryCaller) INITCODEPAIRHASH(opts *bind.CallOpts) ([32]byte, error) {
+//	var (
+//		ret0 = new([32]byte)
+//	)
+//	out := ret0
+//	err := _PancakeFactory.contract.Call(opts, out, "INIT_CODE_PAIR_HASH")
+//	return *ret0, err
+//}
 //
-// Solidity: function INIT_CODE_PAIR_HASH() constant returns(bytes32)
-func (_PancakeFactory *PancakeFactoryCaller) INITCODEPAIRHASH(opts *bind.CallOpts) ([32]byte, error) {
-	var (
-		ret0 = new([32]byte)
-	)
-	out := ret0
-	err := _PancakeFactory.contract.Call(opts, out, "INIT_CODE_PAIR_HASH")
-	return *ret0, err
-}
-
-// INITCODEPAIRHASH is a free data retrieval call binding the contract method 0x5855a25a.
+//// INITCODEPAIRHASH is a free data retrieval call binding the contract method 0x5855a25a.
+////
+//// Solidity: function INIT_CODE_PAIR_HASH() constant returns(bytes32)
+//func (_PancakeFactory *PancakeFactorySession) INITCODEPAIRHASH() ([32]byte, error) {
+//	return _PancakeFactory.Contract.INITCODEPAIRHASH(&_PancakeFactory.CallOpts)
+//}
 //
-// Solidity: function INIT_CODE_PAIR_HASH() constant returns(bytes32)
-func (_PancakeFactory *PancakeFactorySession) INITCODEPAIRHASH() ([32]byte, error) {
-	return _PancakeFactory.Contract.INITCODEPAIRHASH(&_PancakeFactory.CallOpts)
-}
-
-// INITCODEPAIRHASH is a free data retrieval call binding the contract method 0x5855a25a.
+//// INITCODEPAIRHASH is a free data retrieval call binding the contract method 0x5855a25a.
+////
+//// Solidity: function INIT_CODE_PAIR_HASH() constant returns(bytes32)
+//func (_PancakeFactory *PancakeFactoryCallerSession) INITCODEPAIRHASH() ([32]byte, error) {
+//	return _PancakeFactory.Contract.INITCODEPAIRHASH(&_PancakeFactory.CallOpts)
+//}
 //
-// Solidity: function INIT_CODE_PAIR_HASH() constant returns(bytes32)
-func (_PancakeFactory *PancakeFactoryCallerSession) INITCODEPAIRHASH() ([32]byte, error) {
-	return _PancakeFactory.Contract.INITCODEPAIRHASH(&_PancakeFactory.CallOpts)
-}
-
-// AllPairs is a free data retrieval call binding the contract method 0x1e3dd18b.
+//// AllPairs is a free data retrieval call binding the contract method 0x1e3dd18b.
+////
+//// Solidity: function allPairs(uint256 ) constant returns(address)
+//func (_PancakeFactory *PancakeFactoryCaller) AllPairs(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _PancakeFactory.contract.Call(opts, out, "allPairs", arg0)
+//	return *ret0, err
+//}
 //
-// Solidity: function allPairs(uint256 ) constant returns(address)
-func (_PancakeFactory *PancakeFactoryCaller) AllPairs(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _PancakeFactory.contract.Call(opts, out, "allPairs", arg0)
-	return *ret0, err
-}
-
-// AllPairs is a free data retrieval call binding the contract method 0x1e3dd18b.
+//// AllPairs is a free data retrieval call binding the contract method 0x1e3dd18b.
+////
+//// Solidity: function allPairs(uint256 ) constant returns(address)
+//func (_PancakeFactory *PancakeFactorySession) AllPairs(arg0 *big.Int) (common.Address, error) {
+//	return _PancakeFactory.Contract.AllPairs(&_PancakeFactory.CallOpts, arg0)
+//}
 //
-// Solidity: function allPairs(uint256 ) constant returns(address)
-func (_PancakeFactory *PancakeFactorySession) AllPairs(arg0 *big.Int) (common.Address, error) {
-	return _PancakeFactory.Contract.AllPairs(&_PancakeFactory.CallOpts, arg0)
-}
-
-// AllPairs is a free data retrieval call binding the contract method 0x1e3dd18b.
+//// AllPairs is a free data retrieval call binding the contract method 0x1e3dd18b.
+////
+//// Solidity: function allPairs(uint256 ) constant returns(address)
+//func (_PancakeFactory *PancakeFactoryCallerSession) AllPairs(arg0 *big.Int) (common.Address, error) {
+//	return _PancakeFactory.Contract.AllPairs(&_PancakeFactory.CallOpts, arg0)
+//}
 //
-// Solidity: function allPairs(uint256 ) constant returns(address)
-func (_PancakeFactory *PancakeFactoryCallerSession) AllPairs(arg0 *big.Int) (common.Address, error) {
-	return _PancakeFactory.Contract.AllPairs(&_PancakeFactory.CallOpts, arg0)
-}
-
-// AllPairsLength is a free data retrieval call binding the contract method 0x574f2ba3.
+//// AllPairsLength is a free data retrieval call binding the contract method 0x574f2ba3.
+////
+//// Solidity: function allPairsLength() constant returns(uint256)
+//func (_PancakeFactory *PancakeFactoryCaller) AllPairsLength(opts *bind.CallOpts) (*big.Int, error) {
+//	var (
+//		ret0 = new(*big.Int)
+//	)
+//	out := ret0
+//	err := _PancakeFactory.contract.Call(opts, out, "allPairsLength")
+//	return *ret0, err
+//}
 //
-// Solidity: function allPairsLength() constant returns(uint256)
-func (_PancakeFactory *PancakeFactoryCaller) AllPairsLength(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _PancakeFactory.contract.Call(opts, out, "allPairsLength")
-	return *ret0, err
-}
-
-// AllPairsLength is a free data retrieval call binding the contract method 0x574f2ba3.
+//// AllPairsLength is a free data retrieval call binding the contract method 0x574f2ba3.
+////
+//// Solidity: function allPairsLength() constant returns(uint256)
+//func (_PancakeFactory *PancakeFactorySession) AllPairsLength() (*big.Int, error) {
+//	return _PancakeFactory.Contract.AllPairsLength(&_PancakeFactory.CallOpts)
+//}
 //
-// Solidity: function allPairsLength() constant returns(uint256)
-func (_PancakeFactory *PancakeFactorySession) AllPairsLength() (*big.Int, error) {
-	return _PancakeFactory.Contract.AllPairsLength(&_PancakeFactory.CallOpts)
-}
-
-// AllPairsLength is a free data retrieval call binding the contract method 0x574f2ba3.
+//// AllPairsLength is a free data retrieval call binding the contract method 0x574f2ba3.
+////
+//// Solidity: function allPairsLength() constant returns(uint256)
+//func (_PancakeFactory *PancakeFactoryCallerSession) AllPairsLength() (*big.Int, error) {
+//	return _PancakeFactory.Contract.AllPairsLength(&_PancakeFactory.CallOpts)
+//}
 //
-// Solidity: function allPairsLength() constant returns(uint256)
-func (_PancakeFactory *PancakeFactoryCallerSession) AllPairsLength() (*big.Int, error) {
-	return _PancakeFactory.Contract.AllPairsLength(&_PancakeFactory.CallOpts)
-}
-
-// FeeTo is a free data retrieval call binding the contract method 0x017e7e58.
+//// FeeTo is a free data retrieval call binding the contract method 0x017e7e58.
+////
+//// Solidity: function feeTo() constant returns(address)
+//func (_PancakeFactory *PancakeFactoryCaller) FeeTo(opts *bind.CallOpts) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _PancakeFactory.contract.Call(opts, out, "feeTo")
+//	return *ret0, err
+//}
 //
-// Solidity: function feeTo() constant returns(address)
-func (_PancakeFactory *PancakeFactoryCaller) FeeTo(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _PancakeFactory.contract.Call(opts, out, "feeTo")
-	return *ret0, err
-}
-
-// FeeTo is a free data retrieval call binding the contract method 0x017e7e58.
+//// FeeTo is a free data retrieval call binding the contract method 0x017e7e58.
+////
+//// Solidity: function feeTo() constant returns(address)
+//func (_PancakeFactory *PancakeFactorySession) FeeTo() (common.Address, error) {
+//	return _PancakeFactory.Contract.FeeTo(&_PancakeFactory.CallOpts)
+//}
 //
-// Solidity: function feeTo() constant returns(address)
-func (_PancakeFactory *PancakeFactorySession) FeeTo() (common.Address, error) {
-	return _PancakeFactory.Contract.FeeTo(&_PancakeFactory.CallOpts)
-}
-
-// FeeTo is a free data retrieval call binding the contract method 0x017e7e58.
+//// FeeTo is a free data retrieval call binding the contract method 0x017e7e58.
+////
+//// Solidity: function feeTo() constant returns(address)
+//func (_PancakeFactory *PancakeFactoryCallerSession) FeeTo() (common.Address, error) {
+//	return _PancakeFactory.Contract.FeeTo(&_PancakeFactory.CallOpts)
+//}
 //
-// Solidity: function feeTo() constant returns(address)
-func (_PancakeFactory *PancakeFactoryCallerSession) FeeTo() (common.Address, error) {
-	return _PancakeFactory.Contract.FeeTo(&_PancakeFactory.CallOpts)
-}
-
-// FeeToSetter is a free data retrieval call binding the contract method 0x094b7415.
+//// FeeToSetter is a free data retrieval call binding the contract method 0x094b7415.
+////
+//// Solidity: function feeToSetter() constant returns(address)
+//func (_PancakeFactory *PancakeFactoryCaller) FeeToSetter(opts *bind.CallOpts) (common.Address, error) {
+//	var (
+//		ret0 = new(common.Address)
+//	)
+//	out := ret0
+//	err := _PancakeFactory.contract.Call(opts, out, "feeToSetter")
+//	return *ret0, err
+//}
 //
-// Solidity: function feeToSetter() constant returns(address)
-func (_PancakeFactory *PancakeFactoryCaller) FeeToSetter(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _PancakeFactory.contract.Call(opts, out, "feeToSetter")
-	return *ret0, err
-}
-
-// FeeToSetter is a free data retrieval call binding the contract method 0x094b7415.
+//// FeeToSetter is a free data retrieval call binding the contract method 0x094b7415.
+////
+//// Solidity: function feeToSetter() constant returns(address)
+//func (_PancakeFactory *PancakeFactorySession) FeeToSetter() (common.Address, error) {
+//	return _PancakeFactory.Contract.FeeToSetter(&_PancakeFactory.CallOpts)
+//}
 //
-// Solidity: function feeToSetter() constant returns(address)
-func (_PancakeFactory *PancakeFactorySession) FeeToSetter() (common.Address, error) {
-	return _PancakeFactory.Contract.FeeToSetter(&_PancakeFactory.CallOpts)
-}
-
-// FeeToSetter is a free data retrieval call binding the contract method 0x094b7415.
-//
-// Solidity: function feeToSetter() constant returns(address)
-func (_PancakeFactory *PancakeFactoryCallerSession) FeeToSetter() (common.Address, error) {
-	return _PancakeFactory.Contract.FeeToSetter(&_PancakeFactory.CallOpts)
-}
+//// FeeToSetter is a free data retrieval call binding the contract method 0x094b7415.
+////
+//// Solidity: function feeToSetter() constant returns(address)
+//func (_PancakeFactory *PancakeFactoryCallerSession) FeeToSetter() (common.Address, error) {
+//	return _PancakeFactory.Contract.FeeToSetter(&_PancakeFactory.CallOpts)
+//}
 
 // GetPair is a free data retrieval call binding the contract method 0xe6a43905.
 //
 // Solidity: function getPair(address , address ) constant returns(address)
 func (_PancakeFactory *PancakeFactoryCaller) GetPair(opts *bind.CallOpts, arg0 common.Address, arg1 common.Address) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _PancakeFactory.contract.Call(opts, out, "getPair", arg0, arg1)
-	return *ret0, err
+	var out []interface{}
+	err := _PancakeFactory.contract.Call(opts, &out, "getPair", arg0, arg1)
+	ret0 := abi.ConvertType(out[0], new(common.Address)).(common.Address)
+	return ret0, err
 }
 
 // GetPair is a free data retrieval call binding the contract method 0xe6a43905.

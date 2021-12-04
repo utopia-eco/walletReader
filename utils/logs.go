@@ -17,25 +17,28 @@ type logger struct {
 	fatalLogger *log.Logger
 }
 
-func init() {
-	Logger.infoLogger = log.New(os.Stdout, "[INFO] ", log.Ldate|log.Ltime|log.Lshortfile)
-	Logger.warnLogger = log.New(os.Stdout, "[WARN] ", log.Ldate|log.Ltime|log.Lshortfile)
-	Logger.errorLogger = log.New(os.Stdout, "[ERROR] ", log.Ldate|log.Ltime|log.Lshortfile)
-	Logger.fatalLogger = log.New(os.Stdout, "[FATAL] ", log.Ldate|log.Ltime|log.Lshortfile)
+func InitLogger() {
+	Logger = &logger{
+		infoLogger:  log.New(os.Stdout, "[INFO] ", log.Ldate|log.Ltime|log.Lshortfile),
+		warnLogger:  log.New(os.Stdout, "[WARN] ", log.Ldate|log.Ltime|log.Lshortfile),
+		errorLogger: log.New(os.Stdout, "[ERROR] ", log.Ldate|log.Ltime|log.Lshortfile),
+		fatalLogger: log.New(os.Stdout, "[FATAL] ", log.Ldate|log.Ltime|log.Lshortfile),
+	}
 }
 
 func (l *logger) Info(format string, a ...interface{}) {
-	l.infoLogger.Println(fmt.Sprint(format, a))
+	println(fmt.Sprintf(format, a))
+	Logger.infoLogger.Println(fmt.Sprintf(format, a))
 }
 
 func (l *logger) Warn(format string, a ...interface{}) {
-	l.warnLogger.Println(fmt.Sprint(format, a))
+	Logger.warnLogger.Println(fmt.Sprintf(format, a))
 }
 
 func (l *logger) Error(format string, a ...interface{}) {
-	l.errorLogger.Println(fmt.Sprint(format, a))
+	Logger.errorLogger.Println(fmt.Sprintf(format, a))
 }
 
 func (l *logger) Fatal(format string, a ...interface{}) {
-	l.fatalLogger.Println(fmt.Sprint(format, a))
+	Logger.fatalLogger.Println(fmt.Sprintf(format, a))
 }
