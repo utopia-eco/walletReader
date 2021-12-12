@@ -30,14 +30,14 @@ func GetTokenValue(tokenAddr string) (float64, error) {
 		}
 	}
 	if chainlinkPriceAddr, ok := consts.TokenChainlinkProxyMap[tokenAddr]; ok {
-		return GetKnownTokenValue(chainlinkPriceAddr)
+		return GetKnownTokenValue(tokenAddr, chainlinkPriceAddr)
 	} else {
 		return GetUnknownTokenValue(tokenAddr)
 	}
 }
 
 // GetKnownTokenValue checks chainlink price proxy oracle for price
-func GetKnownTokenValue(chainlinkPriceAddr string) (float64, error) {
+func GetKnownTokenValue(tokenAddr, chainlinkPriceAddr string) (float64, error) {
 	chainlinkPriceCaller, err := chainlink.NewChainlinkPrice(common.HexToAddress(chainlinkPriceAddr), BscConn)
 	if err != nil {
 		utils.Logger.Error("GetKnownTokenValue NewChainlinkPrice err: %v", err)
@@ -51,8 +51,12 @@ func GetKnownTokenValue(chainlinkPriceAddr string) (float64, error) {
 	}
 
 	valueFloat, _ := new(big.Float).SetInt(value).Float64()
-
 	usdValue := valueFloat / UsdBase
+
+	TokenPriceMap[tokenAddr] = &models.LastTokenPrice{
+		Price:     usdValue,
+		Timestamp: time.Now().UTC().Unix(),
+	}
 
 	return usdValue, nil
 }
@@ -63,6 +67,10 @@ func GetUnknownTokenValue(tokenAddr string) (float64, error) {
 	var ok bool
 	if tokenPoolInfo, ok = consts.WhitelistTokensPoolMap[tokenAddr]; !ok {
 		utils.Logger.Warn("token not in known list or whitelist: %s", tokenAddr)
+		TokenPriceMap[tokenAddr] = &models.LastTokenPrice{
+			Price:     0,
+			Timestamp: time.Now().UTC().Unix(),
+		}
 		return 0, nil
 	}
 
@@ -74,12 +82,16 @@ func GetUnknownTokenValue(tokenAddr string) (float64, error) {
 		return 0, err
 	}
 
-	value, err := calculateUnknownTokenValueFromPool(tokenAddr, tokenPoolInfo["pair"], tokenPool)
+	usdValue, err := calculateUnknownTokenValueFromPool(tokenAddr, tokenPoolInfo["pair"], tokenPool)
 	if err != nil {
 		return 0, err
 	}
+	TokenPriceMap[tokenAddr] = &models.LastTokenPrice{
+		Price:     usdValue,
+		Timestamp: time.Now().UTC().Unix(),
+	}
 
-	return value, nil
+	return usdValue, nil
 }
 
 func calculateUnknownTokenValueFromPool(tokenAddr, pairAddr string, pancakePool *pancake.PancakePair) (float64, error) {
