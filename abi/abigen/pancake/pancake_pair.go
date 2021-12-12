@@ -353,47 +353,52 @@ func (_PancakePair *PancakePairTransactorRaw) Transact(opts *bind.TransactOpts, 
 //	return _PancakePair.Contract.Factory(&_PancakePair.CallOpts)
 //}
 
-// TODO: uncomment to calculate reserve stuff
-//// GetReserves is a free data retrieval call binding the contract method 0x0902f1ac.
-////
-//// Solidity: function getReserves() constant returns(uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)
-//func (_PancakePair *PancakePairCaller) GetReserves(opts *bind.CallOpts) (struct {
-//	Reserve0           *big.Int
-//	Reserve1           *big.Int
-//	BlockTimestampLast uint32
-//}, error) {
-//	ret := new(struct {
-//		Reserve0           *big.Int
-//		Reserve1           *big.Int
-//		BlockTimestampLast uint32
-//	})
-//	out := ret
-//	err := _PancakePair.contract.Call(opts, out, "getReserves")
-//	return *ret, err
-//}
+type GetReservesStruct struct {
+	Reserve0           *big.Int
+	Reserve1           *big.Int
+	BlockTimestampLast uint32
+}
+
+// GetReserves is a free data retrieval call binding the contract method 0x0902f1ac.
 //
-//// GetReserves is a free data retrieval call binding the contract method 0x0902f1ac.
-////
-//// Solidity: function getReserves() constant returns(uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)
-//func (_PancakePair *PancakePairSession) GetReserves() (struct {
-//	Reserve0           *big.Int
-//	Reserve1           *big.Int
-//	BlockTimestampLast uint32
-//}, error) {
-//	return _PancakePair.Contract.GetReserves(&_PancakePair.CallOpts)
-//}
+// Solidity: function getReserves() constant returns(uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)
+func (_PancakePair *PancakePairCaller) GetReserves(opts *bind.CallOpts) (struct {
+	Reserve0           *big.Int
+	Reserve1           *big.Int
+	BlockTimestampLast uint32
+}, error) {
+	var out []interface{}
+	err := _PancakePair.contract.Call(opts, &out, "getReserves")
+	ret := GetReservesStruct{
+		Reserve0:           out[0].(*big.Int),
+		Reserve1:           out[1].(*big.Int),
+		BlockTimestampLast: out[2].(uint32),
+	}
+	return ret, err
+}
+
+// GetReserves is a free data retrieval call binding the contract method 0x0902f1ac.
 //
-//// GetReserves is a free data retrieval call binding the contract method 0x0902f1ac.
-////
-//// Solidity: function getReserves() constant returns(uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)
-//func (_PancakePair *PancakePairCallerSession) GetReserves() (struct {
-//	Reserve0           *big.Int
-//	Reserve1           *big.Int
-//	BlockTimestampLast uint32
-//}, error) {
-//	return _PancakePair.Contract.GetReserves(&_PancakePair.CallOpts)
-//}
+// Solidity: function getReserves() constant returns(uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)
+func (_PancakePair *PancakePairSession) GetReserves() (struct {
+	Reserve0           *big.Int
+	Reserve1           *big.Int
+	BlockTimestampLast uint32
+}, error) {
+	return _PancakePair.Contract.GetReserves(&_PancakePair.CallOpts)
+}
+
+// GetReserves is a free data retrieval call binding the contract method 0x0902f1ac.
 //
+// Solidity: function getReserves() constant returns(uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)
+func (_PancakePair *PancakePairCallerSession) GetReserves() (struct {
+	Reserve0           *big.Int
+	Reserve1           *big.Int
+	BlockTimestampLast uint32
+}, error) {
+	return _PancakePair.Contract.GetReserves(&_PancakePair.CallOpts)
+}
+
 //// KLast is a free data retrieval call binding the contract method 0x7464fc3d.
 ////
 //// Solidity: function kLast() constant returns(uint256)
@@ -550,32 +555,30 @@ func (_PancakePair *PancakePairTransactorRaw) Transact(opts *bind.TransactOpts, 
 //	return _PancakePair.Contract.Symbol(&_PancakePair.CallOpts)
 //}
 //
-//// Token0 is a free data retrieval call binding the contract method 0x0dfe1681.
-////
-//// Solidity: function token0() constant returns(address)
-//func (_PancakePair *PancakePairCaller) Token0(opts *bind.CallOpts) (common.Address, error) {
-//	var (
-//		ret0 = new(common.Address)
-//	)
-//	out := ret0
-//	err := _PancakePair.contract.Call(opts, out, "token0")
-//	return *ret0, err
-//}
+// Token0 is a free data retrieval call binding the contract method 0x0dfe1681.
 //
-//// Token0 is a free data retrieval call binding the contract method 0x0dfe1681.
-////
-//// Solidity: function token0() constant returns(address)
-//func (_PancakePair *PancakePairSession) Token0() (common.Address, error) {
-//	return _PancakePair.Contract.Token0(&_PancakePair.CallOpts)
-//}
+// Solidity: function token0() constant returns(address)
+func (_PancakePair *PancakePairCaller) Token0(opts *bind.CallOpts) (common.Address, error) {
+	var out []interface{}
+	err := _PancakePair.contract.Call(opts, &out, "token0")
+	ret0 := abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+	return *ret0, err
+}
+
+// Token0 is a free data retrieval call binding the contract method 0x0dfe1681.
 //
-//// Token0 is a free data retrieval call binding the contract method 0x0dfe1681.
-////
-//// Solidity: function token0() constant returns(address)
-//func (_PancakePair *PancakePairCallerSession) Token0() (common.Address, error) {
-//	return _PancakePair.Contract.Token0(&_PancakePair.CallOpts)
-//}
+// Solidity: function token0() constant returns(address)
+func (_PancakePair *PancakePairSession) Token0() (common.Address, error) {
+	return _PancakePair.Contract.Token0(&_PancakePair.CallOpts)
+}
+
+// Token0 is a free data retrieval call binding the contract method 0x0dfe1681.
 //
+// Solidity: function token0() constant returns(address)
+func (_PancakePair *PancakePairCallerSession) Token0() (common.Address, error) {
+	return _PancakePair.Contract.Token0(&_PancakePair.CallOpts)
+}
+
 //// Token1 is a free data retrieval call binding the contract method 0xd21220a7.
 ////
 //// Solidity: function token1() constant returns(address)

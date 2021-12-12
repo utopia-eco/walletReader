@@ -223,32 +223,30 @@ func (_TokenBEP20 *TokenBEP20TransactorRaw) Transact(opts *bind.TransactOpts, me
 //	return _TokenBEP20.Contract.BalanceOf(&_TokenBEP20.CallOpts, account)
 //}
 //
-//// Decimals is a free data retrieval call binding the contract method 0x313ce567.
-////
-//// Solidity: function decimals() constant returns(uint256)
-//func (_TokenBEP20 *TokenBEP20Caller) Decimals(opts *bind.CallOpts) (*big.Int, error) {
-//	var (
-//		ret0 = new(*big.Int)
-//	)
-//	out := ret0
-//	err := _TokenBEP20.contract.Call(opts, out, "decimals")
-//	return *ret0, err
-//}
+// Decimals is a free data retrieval call binding the contract method 0x313ce567.
 //
-//// Decimals is a free data retrieval call binding the contract method 0x313ce567.
-////
-//// Solidity: function decimals() constant returns(uint256)
-//func (_TokenBEP20 *TokenBEP20Session) Decimals() (*big.Int, error) {
-//	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
-//}
+// Solidity: function decimals() constant returns(uint256)
+func (_TokenBEP20 *TokenBEP20Caller) Decimals(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _TokenBEP20.contract.Call(opts, &out, "decimals")
+	ret0 := abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+	return *ret0, err
+}
+
+// Decimals is a free data retrieval call binding the contract method 0x313ce567.
 //
-//// Decimals is a free data retrieval call binding the contract method 0x313ce567.
-////
-//// Solidity: function decimals() constant returns(uint256)
-//func (_TokenBEP20 *TokenBEP20CallerSession) Decimals() (*big.Int, error) {
-//	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
-//}
+// Solidity: function decimals() constant returns(uint256)
+func (_TokenBEP20 *TokenBEP20Session) Decimals() (*big.Int, error) {
+	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
+}
+
+// Decimals is a free data retrieval call binding the contract method 0x313ce567.
 //
+// Solidity: function decimals() constant returns(uint256)
+func (_TokenBEP20 *TokenBEP20CallerSession) Decimals() (*big.Int, error) {
+	return _TokenBEP20.Contract.Decimals(&_TokenBEP20.CallOpts)
+}
+
 //// GetOwner is a free data retrieval call binding the contract method 0x893d20e8.
 ////
 //// Solidity: function getOwner() constant returns(address)

@@ -10,14 +10,14 @@ const (
 )
 
 var (
-	StableCoins = []string{
-		"0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3", //DAI
-		"0x55d398326f99059ff775485246999027b3197955", //USDT
-		"0xe9e7cea3dedca5984780bafc599bd69add087d56", //BUSD
-		"0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //USDC
-		"0x14016e85a25aeb13065688cafb43044c2ef86784", //TUSD
-		"0x03ab98f5dc94996f8c33e15cd4468794d12d41f9", //USDN
-		"0x23396cf899ca06c4472205fc903bdb4de249d6fc", //UST
+	StableCoinsMap = map[string]string{
+		"DAI":  "0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3", //DAI
+		"USDT": "0x55d398326f99059ff775485246999027b3197955", //USDT
+		"BUSD": "0xe9e7cea3dedca5984780bafc599bd69add087d56", //BUSD
+		"USDC": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //USDC
+		"TUSD": "0x14016e85a25aeb13065688cafb43044c2ef86784", //TUSD
+		"USDN": "0x03ab98f5dc94996f8c33e15cd4468794d12d41f9", //USDN
+		"UST":  "0x23396cf899ca06c4472205fc903bdb4de249d6fc", //UST
 	}
 
 	TokenChainlinkProxyMap = map[string]string{
@@ -79,5 +79,48 @@ var (
 		"0x88f1a5ae2a3bf98aeaf342d26b30a79438c9142e": "0xD7eAa5Bf3013A96e3d515c055Dbd98DbdC8c620D", //YFI / USD
 		"0x7f70642d88cf1c4a3a7abb072b53b929b653eda5": "0xC94580FAaF145B2FD0ab5215031833c98D3B77E4", //YFII / USD
 		"0xb86abcb37c3a4b64f74f59301aff131a1becc787": "0x3e3aA4FC329529C8Ab921c810850626021dbA7e6", //ZIL / USD
+	}
+
+	WhitelistTokensPoolMap = map[string]map[string]string{
+		"0xe02df9e3e622debdd69fb838bb799e3f168902c5": {
+			"pool": "0xc2Eed0F5a0dc28cfa895084bC0a9B8B8279aE492",
+			"pair": BnbAddr,
+		}, // BAKE
+		"0xc9849e6fdb743d08faee3e34dd2d1bc69ea11a51": {
+			"pool": "0x5aFEf8567414F29f0f927A0F2787b188624c10E2",
+			"pair": BnbAddr,
+		}, // BUNNY
+		"0xaec945e04baf28b135fa7c640f624f8d90f1c3a6": {
+			"pool": "0x92247860A03F48d5c6425c7CA35CDcFCB1013AA1",
+			"pair": BnbAddr,
+		}, // COIN98
+		"0xda6802bbec06ab447a68294a63de47ed4506acaa": {
+			"pool": "0x7625aae940c35505d069deF82D5469b74a36550B",
+			"pair": BnbAddr,
+		}, // CRYPT
+		"0xa7f552078dcc247c2684336020c03648500c6d9f": {
+			"pool": "0xf9045866e7b372DeF1EFf3712CE55FAc1A98dAF0",
+			"pair": BnbAddr,
+		}, // EPS (also on binance)
+		"0x42f6f551ae042cbe50c739158b4f0cac0edb9096": {
+			"pool": "0x401479091d0F7b8AE437Ee8B054575cd33ea72Bd",
+			"pair": StableCoinsMap["BUSD"],
+		}, // NRV (BUSD)
+		"0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3": {
+			"pool": "0x9adc6Fb78CEFA07E13E9294F150C1E8C1Dd566c0",
+			"pair": BnbAddr,
+		}, // SAFEMOON
+		"0x55b53855eae06c4744841dbfa06fce335db4355b": {
+			"pool": "0x16cc94254b282C6B4FBcD671aA9E5E6Aebf52Fa3",
+			"pair": BnbAddr,
+		}, // SSB
+		"0x9f589e3eabe42ebc94a44727b3f3531c0c877809": {
+			"pool": "0xFFd4B200d3C77A0B691B5562D804b3bd54294e6e",
+			"pair": BnbAddr,
+		}, // TKO
+		"0x6169b3b23e57de79a6146a2170980ceb1f83b9e0": {
+			"pool": "0x39D26BcA778a528eBDD57b136f777820Be5eDd1a",
+			"pair": BnbAddr,
+		}, // VETTER
 	}
 )
