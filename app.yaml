@@ -1,1 +1,2 @@
 runtime: go116
+service: go-wallet-reader
