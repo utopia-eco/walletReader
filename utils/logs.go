@@ -27,18 +27,17 @@ func InitLogger() {
 }
 
 func (l *logger) Info(format string, a ...interface{}) {
-	println(fmt.Sprintf(format, a))
-	Logger.infoLogger.Println(fmt.Sprintf(format, a))
+	Logger.infoLogger.Println(fmt.Sprintf(format, a...))
 }
 
 func (l *logger) Warn(format string, a ...interface{}) {
-	Logger.warnLogger.Println(fmt.Sprintf(format, a))
+	Logger.warnLogger.Println(fmt.Sprintf(format, a...))
 }
 
 func (l *logger) Error(format string, a ...interface{}) {
-	Logger.errorLogger.Println(fmt.Sprintf(format, a))
+	Logger.errorLogger.Println(fmt.Sprintf(format, a...))
 }
 
 func (l *logger) Fatal(format string, a ...interface{}) {
-	Logger.fatalLogger.Println(fmt.Sprintf(format, a))
+	Logger.fatalLogger.Println(fmt.Sprintf(format, a...))
 }

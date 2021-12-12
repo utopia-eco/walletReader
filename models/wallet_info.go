@@ -20,5 +20,5 @@ type WalletTokensValueResp struct {
 type TokenValue struct {
 	TokenAddress string  `json:"token_address"`
 	UnitPrice    float64 `json:"unit_price"`
-	TotalValue   float64 `json:"value"`
+	TotalValue   float64 `json:"token_value"`
 }
