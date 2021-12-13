@@ -10,5 +10,5 @@ var router *gin.Engine
 func InitRoutes() {
 	router = gin.Default()
 	router.POST("/getWallet", views.GetWalletTokenValues)
-	_ = router.Run(":8000")
+	_ = router.Run()
 }
