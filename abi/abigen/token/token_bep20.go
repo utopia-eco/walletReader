@@ -298,33 +298,31 @@ func (_TokenBEP20 *TokenBEP20CallerSession) Decimals() (*big.Int, error) {
 //func (_TokenBEP20 *TokenBEP20CallerSession) Name() (string, error) {
 //	return _TokenBEP20.Contract.Name(&_TokenBEP20.CallOpts)
 //}
+
+// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
-//// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
-////
-//// Solidity: function symbol() constant returns(string)
-//func (_TokenBEP20 *TokenBEP20Caller) Symbol(opts *bind.CallOpts) (string, error) {
-//	var (
-//		ret0 = new(string)
-//	)
-//	out := ret0
-//	err := _TokenBEP20.contract.Call(opts, out, "symbol")
-//	return *ret0, err
-//}
+// Solidity: function symbol() constant returns(string)
+func (_TokenBEP20 *TokenBEP20Caller) Symbol(opts *bind.CallOpts) (string, error) {
+	var out []interface{}
+	err := _TokenBEP20.contract.Call(opts, &out, "symbol")
+	ret0 := abi.ConvertType(out[0], new(string)).(*string)
+	return *ret0, err
+}
+
+// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
-//// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
-////
-//// Solidity: function symbol() constant returns(string)
-//func (_TokenBEP20 *TokenBEP20Session) Symbol() (string, error) {
-//	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
-//}
+// Solidity: function symbol() constant returns(string)
+func (_TokenBEP20 *TokenBEP20Session) Symbol() (string, error) {
+	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
+}
+
+// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
-//// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
-////
-//// Solidity: function symbol() constant returns(string)
-//func (_TokenBEP20 *TokenBEP20CallerSession) Symbol() (string, error) {
-//	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
-//}
-//
+// Solidity: function symbol() constant returns(string)
+func (_TokenBEP20 *TokenBEP20CallerSession) Symbol() (string, error) {
+	return _TokenBEP20.Contract.Symbol(&_TokenBEP20.CallOpts)
+}
+
 //// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 ////
 //// Solidity: function totalSupply() constant returns(uint256)

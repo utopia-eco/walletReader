@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"github.com/utopia-eco/walletReader/consts"
 	"github.com/utopia-eco/walletReader/models"
 	"github.com/utopia-eco/walletReader/services"
 )
@@ -11,10 +12,16 @@ func GetWalletTokenValues(req *models.WalletTokensValueReq) (*models.WalletToken
 	var tokenValues []*models.TokenValue
 
 	for _, token := range req.Tokens {
+		var tokenSymbol string
+		var ok bool
 		value, _ := services.GetTokenValue(token.TokenAddress)
 		totalValue := value * token.Amount
+		if tokenSymbol, ok = consts.TokenSymbolMap[token.TokenAddress]; !ok {
+			tokenSymbol = services.GetTokenSymbol(token.TokenAddress)
+		}
 		tokenValue := &models.TokenValue{
 			TokenAddress: token.TokenAddress,
+			TokenSymbol:  tokenSymbol,
 			UnitPrice:    value,
 			TotalValue:   totalValue,
 		}

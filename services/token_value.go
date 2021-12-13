@@ -4,6 +4,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/utopia-eco/walletReader/abi/abigen/chainlink"
 	"github.com/utopia-eco/walletReader/abi/abigen/pancake"
+	"github.com/utopia-eco/walletReader/abi/abigen/token"
 	"github.com/utopia-eco/walletReader/consts"
 	"github.com/utopia-eco/walletReader/models"
 	"github.com/utopia-eco/walletReader/utils"
@@ -146,4 +147,19 @@ func calculateUnknownTokenValueFromPool(tokenAddr, pairAddr string, pancakePool 
 	}
 
 	return pairValue * tokenValueInPair, nil
+}
+
+func GetTokenSymbol(tokenAddr string) string {
+	bep20Token, err := token.NewTokenBEP20(common.HexToAddress(tokenAddr), BscConn)
+	if err != nil {
+		utils.Logger.Error("GetUnknownTokenValue NewTokenBEP20 err: %v", err)
+		return ""
+	}
+
+	symbol, err := bep20Token.Symbol(nil)
+	if err != nil {
+		utils.Logger.Error("GetUnknownTokenValue get Symbol err: %v", err)
+		return ""
+	}
+	return symbol
 }
