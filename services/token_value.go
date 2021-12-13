@@ -19,7 +19,7 @@ const (
 
 var (
 	//BnbPrice      float64
-	TokenPriceMap map[string]*models.LastTokenPrice
+	TokenPriceMap = map[string]*models.LastTokenPrice{}
 )
 
 // GetTokenValue checks if token is updated in last 30s
