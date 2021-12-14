@@ -21,5 +21,6 @@ type TokenValue struct {
 	TokenAddress string  `json:"token_address"`
 	TokenSymbol  string  `json:"token_symbol"`
 	UnitPrice    float64 `json:"unit_price"`
+	Amount       float64 `json:"amount"`
 	TotalValue   float64 `json:"token_value"`
 }

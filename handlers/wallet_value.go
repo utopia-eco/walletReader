@@ -22,6 +22,7 @@ func GetWalletTokenValues(req *models.WalletTokensValueReq) (*models.WalletToken
 		tokenValue := &models.TokenValue{
 			TokenAddress: token.TokenAddress,
 			TokenSymbol:  tokenSymbol,
+			Amount:       token.Amount,
 			UnitPrice:    value,
 			TotalValue:   totalValue,
 		}
