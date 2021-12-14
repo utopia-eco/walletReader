@@ -21,7 +21,8 @@ const (
 
 var (
 	//BnbPrice      float64
-	TokenPriceMap = map[string]*models.LastTokenPrice{}
+	TokenPriceMap   = map[string]*models.LastTokenPrice{}
+	TokenDecimalMap = map[string]int{}
 )
 
 // GetTokenValue checks if token is updated in last 30s
@@ -109,16 +110,24 @@ func calculateUnknownTokenValueFromPool(tokenAddr, pairAddr string, pancakePool 
 		return 0, err
 	}
 
-	bep20Token, err := token.NewTokenBEP20(common.HexToAddress(tokenAddr), BscConn)
-	if err != nil {
-		utils.Logger.Error("GetUnknownTokenValue NewTokenBEP20 err: %v", err)
-		return 0, err
-	}
+	var tokenBase float64
 
-	tokenDecimal, err := bep20Token.Decimals(nil)
-	if err != nil {
-		utils.Logger.Error("GetUnknownTokenValue get Decimals err: %v", err)
-		return 0, err
+	if pow, ok := TokenDecimalMap[tokenAddr]; !ok {
+		bep20Token, err := token.NewTokenBEP20(common.HexToAddress(tokenAddr), BscConn)
+		if err != nil {
+			utils.Logger.Error("GetUnknownTokenValue NewTokenBEP20 err: %v", err)
+			return 0, err
+		}
+
+		tokenDecimal, err := bep20Token.Decimals(nil)
+		if err != nil {
+			utils.Logger.Error("GetUnknownTokenValue get Decimals err: %v", err)
+			return 0, err
+		}
+		power := int(18 - tokenDecimal.Int64())
+		tokenBase = math.Pow10(power)
+	} else {
+		tokenBase = math.Pow10(pow)
 	}
 
 	var pairReserve, tokenReserve float64
@@ -137,10 +146,7 @@ func calculateUnknownTokenValueFromPool(tokenAddr, pairAddr string, pancakePool 
 		return 0, nil
 	}
 
-	pow := int(18 - tokenDecimal.Int64())
-	utils.Logger.Info("%v", pow)
-
-	tokenValueInPair := pairReserve / tokenReserve / math.Pow10(pow)
+	tokenValueInPair := pairReserve / tokenReserve / tokenBase
 
 	utils.Logger.Info("tokenr: %f, pairr: %f", tokenReserve, pairReserve)
 
