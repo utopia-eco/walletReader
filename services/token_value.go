@@ -8,6 +8,7 @@ import (
 	"github.com/utopia-eco/walletReader/consts"
 	"github.com/utopia-eco/walletReader/models"
 	"github.com/utopia-eco/walletReader/utils"
+	"math"
 	"math/big"
 	"time"
 )
@@ -108,17 +109,17 @@ func calculateUnknownTokenValueFromPool(tokenAddr, pairAddr string, pancakePool 
 		return 0, err
 	}
 
-	//bep20Token, err := token.NewTokenBEP20(common.HexToAddress(tokenAddr), BscConn)
-	//if err != nil {
-	//	utils.Logger.Error("GetUnknownTokenValue NewTokenBEP20 err: %v", err)
-	//	return 0, err
-	//}
-	//
-	//decimal1, err := bep20Token.Decimals(nil)
-	//if err != nil {
-	//	utils.Logger.Error("GetUnknownTokenValue get Decimals err: %v", err)
-	//	return 0, err
-	//}
+	bep20Token, err := token.NewTokenBEP20(common.HexToAddress(tokenAddr), BscConn)
+	if err != nil {
+		utils.Logger.Error("GetUnknownTokenValue NewTokenBEP20 err: %v", err)
+		return 0, err
+	}
+
+	tokenDecimal, err := bep20Token.Decimals(nil)
+	if err != nil {
+		utils.Logger.Error("GetUnknownTokenValue get Decimals err: %v", err)
+		return 0, err
+	}
 
 	var pairReserve, tokenReserve float64
 
@@ -136,7 +137,10 @@ func calculateUnknownTokenValueFromPool(tokenAddr, pairAddr string, pancakePool 
 		return 0, nil
 	}
 
-	tokenValueInPair := tokenReserve / pairReserve
+	pow := int(18 - tokenDecimal.Int64())
+	utils.Logger.Info("%v", pow)
+
+	tokenValueInPair := pairReserve / tokenReserve / math.Pow10(pow)
 
 	utils.Logger.Info("tokenr: %f, pairr: %f", tokenReserve, pairReserve)
 
