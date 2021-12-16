@@ -9,6 +9,7 @@ type Token struct {
 	TokenAddress string  `json:"token_address"`
 	Symbol       string  `json:"symbol,omitempty"`
 	Amount       float64 `json:"amount"`
+	IsWrapped    *bool   `json:"is_wrapped,omitempty"`
 }
 
 type WalletTokensValueResp struct {

@@ -26,6 +26,11 @@ func GetWalletTokenValues(req *models.WalletTokensValueReq) (*models.WalletToken
 			UnitPrice:    value,
 			TotalValue:   totalValue,
 		}
+		if token.IsWrapped != nil {
+			if *token.IsWrapped {
+				tokenValue.TokenSymbol = "W" + tokenValue.TokenSymbol
+			}
+		}
 		tokenValues = append(tokenValues, tokenValue)
 		walletValue += totalValue
 	}
