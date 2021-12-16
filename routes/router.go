@@ -14,7 +14,7 @@ func InitRoutes() {
 	config.AllowOrigins = []string{
 		"http://localhost:3000",
 		"https://localhost:3000",
-		"https://utopia.cc/",
+		"https://utopia.cc",
 		"https://utopia-web-staging-3de7nawkiq-uw.a.run.app",
 	}
 	router.Use(cors.New(config))
