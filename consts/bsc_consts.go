@@ -79,6 +79,7 @@ var (
 		"0x55b53855eae06c4744841dbfa06fce335db4355b": "SSB",
 		"0x9f589e3eabe42ebc94a44727b3f3531c0c877809": "TKO",
 		"0x6169b3b23e57de79a6146a2170980ceb1f83b9e0": "VETTER",
+		"0x391748379827340DB2daFFC845AC6Cffad431B50": "TOPIA",
 	}
 
 	StableCoinsMap = map[string]string{
@@ -193,5 +194,9 @@ var (
 			"pool": "0x39D26BcA778a528eBDD57b136f777820Be5eDd1a",
 			"pair": BnbAddr,
 		}, // VETTER
+		"0x391748379827340DB2daFFC845AC6Cffad431B50": {
+			"pool": "0x3699744bD8222b7bA28121FAA57912087A818306",
+			"pair": BnbAddr,
+		}, // TOPIA
 	}
 )
