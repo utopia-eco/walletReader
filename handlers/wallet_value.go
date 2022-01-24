@@ -12,15 +12,28 @@ func GetWalletTokenValues(req *models.WalletTokensValueReq) (*models.WalletToken
 	var tokenValues []*models.TokenValue
 
 	for _, token := range req.Tokens {
+		if _, ok := consts.BlacklistTokens[token.TokenAddress]; ok {
+			tokenValue := &models.TokenValue{
+				TokenAddress: token.TokenAddress,
+				Blacklist:    true,
+				TokenSymbol:  "",
+				Amount:       token.Amount,
+				UnitPrice:    0,
+				TotalValue:   0,
+			}
+			tokenValues = append(tokenValues, tokenValue)
+			continue
+		}
 		var tokenSymbol string
 		var ok bool
-		value, _ := services.GetTokenValue(token.TokenAddress)
+		value, _ := services.GetTokenValueFromApi(token.TokenAddress)
 		totalValue := value * token.Amount
 		if tokenSymbol, ok = consts.TokenSymbolMap[token.TokenAddress]; !ok {
 			tokenSymbol = services.GetTokenSymbol(token.TokenAddress)
 		}
 		tokenValue := &models.TokenValue{
 			TokenAddress: token.TokenAddress,
+			Blacklist:    false,
 			TokenSymbol:  tokenSymbol,
 			Amount:       token.Amount,
 			UnitPrice:    value,

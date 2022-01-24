@@ -22,3 +22,13 @@ type BakeApiInfo struct {
 	} `json:"data"`
 	Timestamp int64 `json:"timestamp"`
 }
+
+type PancakePriceResp struct {
+	UpdatedAt int64 `json:"updated_at"`
+	Data      struct {
+		Name     string `json:"name"`
+		Symbol   string `json:"symbol"`
+		Price    string `json:"price"`
+		PriceBNB string `json:"price_BNB"`
+	} `json:"data"`
+}

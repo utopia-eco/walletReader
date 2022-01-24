@@ -20,6 +20,7 @@ type WalletTokensValueResp struct {
 
 type TokenValue struct {
 	TokenAddress string  `json:"token_address"`
+	Blacklist    bool    `json:"blacklist"`
 	TokenSymbol  string  `json:"token_symbol"`
 	UnitPrice    float64 `json:"unit_price"`
 	Amount       float64 `json:"amount"`
