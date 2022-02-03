@@ -198,5 +198,9 @@ var (
 			"pool": "0x3699744bD8222b7bA28121FAA57912087A818306",
 			"pair": BnbAddr,
 		}, // TOPIA
+		"0x97a30C692eCe9C317235d48287d23d358170FC40": {
+			"pool": "0x4Bbf3f2eef2485DAc831167dB92D77735946AaCC",
+			"pair": BnbAddr,
+		}, // TOPIA
 	}
 )
