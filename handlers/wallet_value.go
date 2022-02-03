@@ -27,6 +27,9 @@ func GetWalletTokenValues(req *models.WalletTokensValueReq) (*models.WalletToken
 		var tokenSymbol string
 		var ok bool
 		value, _ := services.GetTokenValueFromApi(token.TokenAddress)
+		if value == 0 {
+			value, _ = services.GetTokenValue(token.TokenAddress)
+		}
 		totalValue := value * token.Amount
 		if tokenSymbol, ok = consts.TokenSymbolMap[token.TokenAddress]; !ok {
 			tokenSymbol = services.GetTokenSymbol(token.TokenAddress)
