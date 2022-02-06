@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"github.com/utopia-eco/walletReader/utils"
 	"os"
+	"strings"
 )
 
 var BlacklistTokens = map[string]bool{}
@@ -19,6 +20,7 @@ func InitBlacklist() {
 	scanner := bufio.NewScanner(file)
 
 	for scanner.Scan() {
-		BlacklistTokens[scanner.Text()] = true
+		address := strings.ToLower(scanner.Text())
+		BlacklistTokens[address] = true
 	}
 }

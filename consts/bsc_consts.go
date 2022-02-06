@@ -201,6 +201,6 @@ var (
 		"0x97a30C692eCe9C317235d48287d23d358170FC40": {
 			"pool": "0x4Bbf3f2eef2485DAc831167dB92D77735946AaCC",
 			"pair": BnbAddr,
-		}, // TOPIA
+		}, // CRX
 	}
 )

@@ -4,6 +4,7 @@ import (
 	"github.com/utopia-eco/walletReader/consts"
 	"github.com/utopia-eco/walletReader/models"
 	"github.com/utopia-eco/walletReader/services"
+	"strings"
 )
 
 func GetWalletTokenValues(req *models.WalletTokensValueReq) (*models.WalletTokensValueResp, error) {
@@ -12,7 +13,7 @@ func GetWalletTokenValues(req *models.WalletTokensValueReq) (*models.WalletToken
 	var tokenValues []*models.TokenValue
 
 	for _, token := range req.Tokens {
-		if _, ok := consts.BlacklistTokens[token.TokenAddress]; ok {
+		if _, ok := consts.BlacklistTokens[strings.ToLower(token.TokenAddress)]; ok {
 			tokenValue := &models.TokenValue{
 				TokenAddress: token.TokenAddress,
 				Blacklist:    true,
